@@ -32,11 +32,11 @@ public class UserController {
 			String exceptionClassName = (String)req.getAttribute("shiroLoginFailure");
 	        String error = null;
 	        if(UnknownAccountException.class.getName().equals(exceptionClassName)) {
-	            error = "ÓÃ»§Ãû/ÃÜÂë´íÎó";
+	            error = "ç”¨æˆ·å/å¯†ç é”™è¯¯";
 	        } else if(IncorrectCredentialsException.class.getName().equals(exceptionClassName)) {
-	            error = "ÓÃ»§Ãû/ÃÜÂë´íÎó";
+	            error = "ç”¨æˆ·å/å¯†ç é”™è¯¯";
 	        } else if(exceptionClassName != null) {
-	            error = "ÆäËû´íÎó£º" + exceptionClassName;
+	            error = "æœªçŸ¥é”™è¯¯" + exceptionClassName;
 	        }
 	        model.addAttribute("error", error);
 			model.addAttribute("message", "login success!");
@@ -53,13 +53,6 @@ public class UserController {
 		return "redirect:/login";
 	}
 	
-	@RequestMapping("/site/index1")
-	public String index(Model model) {
-		model.addAttribute("msg", "¹ş¹ş¹ş");
-		return "index1";
-	}
-	
-
 	@RequestMapping("/userRegister")
 	public String registerPage(Model model) {
 		return "register";

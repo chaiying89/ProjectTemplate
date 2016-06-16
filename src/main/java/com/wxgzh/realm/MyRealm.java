@@ -38,13 +38,12 @@ public class MyRealm extends AuthorizingRealm {
 		String username = (String) token.getPrincipal();
 		User user = userService.getByUsername(username);
 		if (user == null) {
-			throw new UnknownAccountException();// 没找到帐号
+			throw new UnknownAccountException();
 		}
 
-		// 交给AuthenticatingRealm使用CredentialsMatcher进行密码匹配，如果觉得人家的不好可以自定义实现
 		SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
-				user.getUsername(), // 用户名
-				user.getPassword(), // 密码
+				user.getUsername(), 
+				user.getPassword(), 
 				getName() // realm name
 		);
 		return authenticationInfo;
