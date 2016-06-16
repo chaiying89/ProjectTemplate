@@ -104,15 +104,15 @@
         </property>
         <property name="filterChainDefinitions">  
             <value>  
-                <!-- 静态资源允许访问 -->  
-                /i/** = anon  
-                /static/** = anon  
+                <!-- 静态资源允许访问 --> 
+                /static/** = anon
+                /site/** = anon
                 /success = anon
                 <!-- 登录页允许访问 -->  
                 /login = authc
                 /logout = logout  
                 <!-- 其他资源需要认证 -->  
-                /** = authc 
+                /** = authc
             </value>  
         </property>  
     </bean>  

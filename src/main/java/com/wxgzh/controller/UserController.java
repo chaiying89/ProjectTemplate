@@ -50,7 +50,13 @@ public class UserController {
 	@RequestMapping("/logout")
 	public String logout() {
 		SecurityUtils.getSubject().logout();
-		return "/login";
+		return "redirect:/login";
+	}
+	
+	@RequestMapping("/site/index1")
+	public String index(Model model) {
+		model.addAttribute("msg", "¹þ¹þ¹þ");
+		return "index1";
 	}
 	
 
